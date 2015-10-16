@@ -1,0 +1,143 @@
+// SASS Style Controls
+$hover-bg: #999
+$hover-text: #FFF
+$alert-success: #09C
+$alert-fail: #CD3333
+
+@import "compass"
+// General Styles
+#form-container
+	max-width: 600px
+	min-width: 320px
+	margin: 0 auto
+	padding: 20px
+	border: solid 4px #ccc
+	background: #f0f0f0
+	@include background-image(linear-gradient(#E0E0E0, #FFF))
+	+border-radius(6px)
+	form
+		.form-checker
+			display: none
+		.form-group
+			margin-bottom: 20px
+			label
+				color: #222
+				text-align: left
+				display: none !important
+			input, label
+				display: inline-block
+				width: 100%
+				float: left
+				padding: 24px 20px
+				font-size: 18px
+				line-height: 26px
+				+transition(all 100ms ease-in-out)
+				&:focus
+					outline: none
+					border: solid 1px $hover-bg
+					background: $hover-bg
+					color: $hover-text
+					+transition(all 100ms ease-in-out)
+					+box-shadow(none)
+					&::-webkit-input-placeholder
+						color: $hover-text
+			textarea
+				height: 120px
+				padding: 20px
+				font-size: 18px
+				line-height: 26px
+				&:focus
+					outline: none
+					border: solid 1px $hover-bg
+					background: $hover-bg
+					color: $hover-text
+					+transition(all 100ms ease-in-out)
+					+box-shadow(none)
+					&::-webkit-input-placeholder
+						color: $hover-text
+		.submit-wrap
+			padding: 0
+			position: relative
+			.btn-submit
+				border-bottom: solid 3px #999
+				position: relative
+				font-size: 18px
+				padding: 10px 20px
+				&:focus
+					display: inline-block
+					top: 2px
+					margin-bottom: 2px
+					outline: none
+					+box-shadow(none)
+					border-bottom: solid 1px #999
+			.loading
+				position: absolute
+				top: -70px
+				left: 50px
+				margin-left: -16px
+				z-index: 1
+		.alert-wrap
+			padding: 0
+			.alert-message-wrap
+				width: 100%
+				min-height: 10px
+				color: #fff
+				padding: 15px 10px
+				font-size: 12px
+				+border-radius(5px)
+				&.alert-success
+					background: $alert-success
+				&.alert-fail
+					background: $alert-fail
+				.alert-message
+					position: relative
+					display: inline-block
+					padding-left: 35px
+					.fa
+						font-size: 26px
+						position: absolute
+						left: 0
+						top: -5px
+			
+// Styles intended only for this example
+body
+	padding: 20px
+h3.example-title
+	text-align: center
+	font-size: 22px
+h4.example-subtitle
+	text-align: center
+	font-size: 18px
+	padding-top: 6px
+	color: #555
+p.instructions
+	text-align: justify
+	padding: 20px
+	line-height: 24px
+	&.asp, &.php
+		padding-left: 0
+		padding-right: 0
+	strong
+		display: inline-block
+		color: #fff
+		padding: 2px 5px
+		margin-right: 6px
+		+border-radius(5px)
+	&.asp strong
+		background: #213D30
+		color: #B4D7BF
+	&.php strong
+		background: #003
+		color: #C6E2FF
+pre.dark.asp
+	border: solid 1px #213D30
+	background: #213D30
+	color: #B4D7BF
+pre.dark.php
+	background: #003
+	color: #C6E2FF
+	border: solid 1px #003
+h3.example-title, h4.example-subtitle, p.instructions
+	max-width: 600px
+	margin: 0 auto
+	font-family: helvetica-neue, helvetica, sans-serif

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Bootstrap AJAX Form Validation & Spam Filter</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/font-awesome.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="example-title">Bootstrap Form Spam Filter</h3>
+      <h4 class="example-subtitle">No CAPTCHA or Human Testers</h4>
+      <p class="instructions">Most spam emails will fill out all fields in a form based on the DOM elements on a page without reading the CSS. In this form there is a field called 'formChecker' wrapped in '.form-checker' with 'Display: none' added in the CSS. If this field is filled out a 'return false' is triggered in the JS, causing the email to not be sent.<br/><strong>Chrome, Safari, Firefox, IE9+</strong></p>
+      <div id="form-container" class="clearfix">
+        <form id="ctsForm" role="form" name="ctsForm" onsubmit="return validateForm()" class="clearfix">
+          <div class="form-group clearfix">
+            <label class="label">Name</label>
+            <input placeholder="Name" name="formName" required="required" class="form-control"/>
+          </div>
+          <div class="form-group clearfix">
+            <label class="label">Phone</label>
+            <input placeholder="Phone Number" name="formPhone" class="form-control"/>
+          </div>
+          <div class="form-group clearfix">
+            <label class="label">Email</label>
+            <input id="form-email" placeholder="Email Address" name="formEmail" type="email" required="required" class="form-control"/>
+          </div>
+          <div class="form-group clearfix form-checker">
+            <label class="label">Info</label>
+            <input placeholder="Info" name="formChecker" class="form-control"/>
+          </div>
+          <div class="form-group clearfix">
+            <label class="label">Subject</label>
+            <input placeholder="Subject" name="formSubject" required="required" class="form-control"/>
+          </div>
+          <div class="form-group clearfix">
+            <label class="label">Message</label>
+            <textarea placeholder="Let us know how we can help you" name="formMessage" required="required" class="form-control"></textarea>
+          </div>
+          <div class="col-xs-3 submit-wrap">
+            <button type="submit" value="submit" class="btn btn-default btn-submit">Submit</button><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/loading.gif" class="loading"/>
+          </div>
+          <div class="col-xs-9 alert-wrap"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="instructions">For IE8 support create the following script to display labels:
+        <pre>&lt;!--[if lt IE 8]&gt;
+&lt;script&gt;
+$('#form-container label').css({'display':'inline-block !important'});
+&lt;/script&gt;
+&lt;![endif]--&gt;</pre>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="instructions asp"><strong>ASP </strong>initiate if formChecker is empty
+          <pre class="dark asp">&lt;%
+    if (request("formChecker") = "") then
+        ' all your form stuff here
+    end if
+%&gt;</pre>
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <p class="instructions php"><strong>PHP </strong>initiate if formChecker is empty
+          <pre class="dark php">&lt;?php
+    if &#40;request&#40;"formChecker"&#41; == ""&#41; {
+        // all your form stuff here;
+    }
+?&gt;</pre>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/html5shiv.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/jquery.placeholder.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
